@@ -1,0 +1,128 @@
+=======================================================================================
+PROGRAMMER'S MANUAL
+========================================================================================
+This is the programmers manual page for the MPX OS Version R1. It contains information necessary to manipulate the code and therefore the system.
+
+This manual will be organized by file.  The file name will be the section, and the
+contents will be the function header, description, parameters, and any returned
+values.
+========================================================================================
+
+SERIAL.C
+========================================================================================
+FUNCTION CALL:
+	serial_poll
+
+DESCRIPTION:
+	Continuously polls (checks) the LSR (Line Status Register) for data and stores it one bit at a time in to a user-instantiated buffer, until either the buffer is full or a null terminator is encountered
+
+PARAMETERS
+	device dev - device to read from
+	char *buffer - the user-provided buffer to write into
+	size_t len - size of the buffer
+
+RETURN
+	size_t bytes_read - the amount of bytes read
+
+----------------------------------------------------------------------------------------
+
+COMMHAND.C
+========================================================================================
+FUNCTION CALL:
+	commhand
+
+DESCRIPTION:
+	Checks buffer from polling function to see if user input matches desired funtion input. If it does, proceed with command. If not, exit.
+	
+
+PARAMETERS
+	void
+
+RETURN
+	void
+
+----------------------------------------------------------------------------------------
+FUNCTION CALL:
+	help
+
+DESCRIPTION:
+	Provides instructions to user upon request on how to operate terminal.
+	
+
+PARAMETERS
+	void
+
+RETURN
+	void
+
+----------------------------------------------------------------------------------------
+FUNCTION CALL:
+	shutdown
+
+DESCRIPTION:
+	Exits the loop initiated in the commhand function upon confirmation from the user. Returns execution to kmain().
+	
+
+PARAMETERS
+	void
+
+RETURN
+	void
+
+----------------------------------------------------------------------------------------
+FUNCTION CALL:
+	gettime
+
+DESCRIPTION:
+	Reads the binary coded decimal stored in the Real Time Clock Register 0x71.
+	
+
+PARAMETERS
+	void
+
+RETURN
+	void
+
+----------------------------------------------------------------------------------------
+FUNCTION CALL:
+	settime
+
+DESCRIPTION:
+	Disables interrupts, writes a new value to the RTC register 0x71 using outb(), then renables interrupts
+	
+
+PARAMETERS
+	void
+
+RETURN
+	void
+
+----------------------------------------------------------------------------------------
+FUNCTION CALL:
+	getdate
+
+DESCRIPTION:
+	Reads date value sotred in system register	
+
+PARAMETERS
+	void
+
+RETURN
+	void
+
+----------------------------------------------------------------------------------------
+FUNCTION CALL:
+	setdate
+
+DESCRIPTION:
+	Writes new value to date value stored in register
+	
+
+PARAMETERS
+	void
+
+RETURN
+	void
+
+----------------------------------------------------------------------------------------
+
