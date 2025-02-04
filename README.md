@@ -3,9 +3,9 @@
 WVU CS450 "The Debtors" 
 
 CONTRIBUTORS:
-- Hunter Lavender 
-- Colby Gallaher
-- Rae McDonald
+- Hunter L 
+- Colby G
+- Rae M
 - Garrett Rhodes
 
 **MPX PREREQUISITES:**
